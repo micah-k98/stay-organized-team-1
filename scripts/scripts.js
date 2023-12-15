@@ -50,10 +50,14 @@ async function getUserTasks(event) {
 
 async function displayTask(task) {
     let card = toDoTaskTemplate.content.cloneNode(true);
-    card.getElementById("category").innerText = task.category;
-    card.getElementById("priority").innerText = task.priority;
+   // card.getElementById("category").innerText = task.category;
+   // card.getElementById("priority").innerText = task.priority;
     card.getElementById("desc").innerText = task.description;
     card.getElementById("deadline").innerText = task.deadline;
 
     allTasks.appendChild(card);
+}
+
+async function todoDetails(){
+
 }
