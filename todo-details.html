@@ -15,12 +15,63 @@
   </head>
   <body>
     <main class="container">
-      <div id="todoDetails">
-        <form>
-          <label for="todoDetails">User</label>
-            <input type="text" class="form-text mt-4" readonly value="click" />
-        </form>
-      </div>
+        <template id="todoDetailsTemplate">
+          <div>
+            <label for="todoDetails">User</label>
+            <br />
+            <input
+              type="text"
+              class="form-text"
+              readonly
+              value="1"
+              id="selectedUser"
+            />
+          </div>
+          <div>
+            <label for="todoDetails">Category</label>
+            <br />
+            <input
+              type="text"
+              class="form-text"
+              readonly
+              value="Personal Task"
+              id="category"
+            />
+          </div>
+            <div>
+                <label for="todoDetails">Priority</label>
+                <br />
+                <input
+                type="text"
+                class="form-text"
+                readonly
+                value="Medium"
+                id="priority"
+                />
+            </div>
+            <div>
+                <label for="todoDetails">Description</label>
+                <br />
+                <input
+                type="text"
+                class="form-text"
+                readonly
+                value="Finish studying for ENG 211 exam"
+                id="description"
+                />
+            </div>
+            <div>
+                <label for="todoDetails">Deadline</label>
+                <br />
+                <input
+                type="text"
+                class="form-text"
+                readonly
+                value="2022-12-15"
+                id="deadline"
+                />
+            </div>
+        </template>
     </main>
 
     <script

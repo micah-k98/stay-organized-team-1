@@ -1,8 +1,9 @@
 let dataServices;
 let userSelect;
 let allTasks, toDoTaskTemplate;
+let toDoDetailsTemplate
 
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', () => {
     dataServices = new DataServices
 
     // Set variables
@@ -14,18 +15,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
     userSelect.addEventListener("change", getUserTasks);
 
     getAllUsers();
-    
+
 
 })
 
-async function getAllUsers(){
+async function getAllUsers() {
     let userData = await dataServices.getAll()
     console.table(userData)
 
-    userData.forEach(user =>{
+    userData.forEach(user => {
         const option = new Option(user.name, user.id);
         userSelect.appendChild(option);
-     })
+    })
 }
 
 async function getUserTasks(event) {
@@ -50,14 +51,21 @@ async function getUserTasks(event) {
 
 async function displayTask(task) {
     let card = toDoTaskTemplate.content.cloneNode(true);
-   // card.getElementById("category").innerText = task.category;
-   // card.getElementById("priority").innerText = task.priority;
+    // card.getElementById("category").innerText = task.category;
+    // card.getElementById("priority").innerText = task.priority;
     card.getElementById("desc").innerText = task.description;
     card.getElementById("deadline").innerText = task.deadline;
 
     allTasks.appendChild(card);
 }
 
-async function todoDetails(){
+async function todoDetails() {
+    let card = toDoDetailsTemplate.content.cloneNode(true);
 
+    card.getElementById("category").innerText = task.category;
+    card.getElementById("priority").innerText = task.priority;
+    card.getElementById("desc").innerText = task.description;
+    card.getElementById("deadline").innerText = task.deadline;
+
+    allTasks.appendChild(card);
 }
