@@ -26,5 +26,13 @@ class DataServices{
 
         }
         
-    
+    async addNewUser(userInfo) {
+        const requestInfo = {
+            method: "POST",
+            body: JSON.stringify(userInfo),
+            headers: {"Content-type": "application/json;charset=UTF-8"}
+        }
+
+        return fetch(this.APIurl + "users", requestInfo)
+    }
 }
